@@ -5,13 +5,13 @@
         <title>HTML5 Image Input</title>
         <meta name="'viewport" content="width=device-width">
         <!-- <link rel="stylesheet" href="main.css"> -->
-        <style>
+        <!-- <style>
             p>audio,
             p>video,
             p>img{
                 max-width: 90%;
             }
-        </style>
+        </style> -->
     </head>
     <body>
         <header>
@@ -20,13 +20,14 @@
         </header>
     </body>
     <main>
-        <form action="#" id="myform">
+        <form action="#" id="myform" enctype="multipart/form-data">
             <label for="capture">Capture Image</label>
 
             <input type="file"
             id="capture"
             accept="image/*"
-            capture />
+            capture
+            multiple />
             <br/>
             <input type="submit" value="Process" />
         </form>
@@ -34,17 +35,17 @@
         </p>
     </main>
     <script>
-        document.addEventListener('DOMContentLoaded'), (ev)=>{
+        document.addEventListener('DOMContentLoaded', (ev)=>{
             let form = document.getElementById('myform');
             let input = document.getElementById('capture');
             
-            input.addEventListener('change'), (ev)=>{
+            input.addEventListener('change', (ev)=>{
                 console.dir( input.files[0]);
                 if(imput.files[0].type.indexOf("image/") > -1){
                     let img = documento.getElementById('img');
                     img.src = window.URL.createObjectURL(input.files[0])
                 }
-            }
-        }
+            })
+        })
     </script>
 </html>
